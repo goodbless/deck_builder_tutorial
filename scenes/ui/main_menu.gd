@@ -1,5 +1,7 @@
 extends Control
 
+const CHARACTER_SELECTOR_SCENE = preload("res://scenes/ui/character_selector.tscn")
+
 @onready var continue_button: Button = %Continue
 
 func _ready() -> void:
@@ -10,7 +12,7 @@ func _on_continue_pressed() -> void:
 
 
 func _on_new_run_pressed() -> void:
-	print("new run")
+	get_tree().change_scene_to_packed(CHARACTER_SELECTOR_SCENE)
 
 
 func _on_exit_pressed() -> void:
