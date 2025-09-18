@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxxgdc2x8ormo"]
+
+[ext_resource type="Script" uid="uid://0u4oce728bj1" path="res://global/scene_transition.gd" id="1_ywopy"]
+
+[node name="Control" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ywopy")
+fade_out_duration = 0.5
+fade_in_duration = 0.5
+shrink_dration = 0.8
+
+[node name="Mask" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 72)

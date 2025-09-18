@@ -12,7 +12,8 @@ func _on_continue_pressed() -> void:
 
 
 func _on_new_run_pressed() -> void:
-	get_tree().change_scene_to_packed(CHARACTER_SELECTOR_SCENE)
+	#get_tree().change_scene_to_packed(CHARACTER_SELECTOR_SCENE)
+	SceneTransition.transition_shrink(CHARACTER_SELECTOR_SCENE)
 
 
 func _on_exit_pressed() -> void:

@@ -21,6 +21,7 @@ Events="*res://global/events.gd"
 Shaker="*res://global/shaker.gd"
 MusicPlayer="*res://global/music_player.tscn"
 SFXPlayer="*res://global/sfx_player.tscn"
+SceneTransition="*res://global/scene_transition.tscn"
 
 [display]
 
@@ -56,4 +57,3 @@ right_mouse={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="mobile"
