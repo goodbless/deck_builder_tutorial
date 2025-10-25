@@ -36,7 +36,7 @@ func generate_map() -> Array[Array]:
 
 	print_map()
 
-	return []
+	return map_data
 
 func print_map() -> void:
 	for floor in map_data:
