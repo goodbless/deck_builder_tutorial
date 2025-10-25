@@ -34,15 +34,28 @@ func generate_map() -> Array[Array]:
             current_j = _setup_connections(i, current_j)
 
 
-    var i := 0
-    for floor in map_data:
-        print("floor %s" % i)
-        var used_rooms = floor.filter(func(r): return r.next_rooms.size() > 0)
-        print(used_rooms)
-        i += 1
+    print_map()
 
     return []
 
+func print_map() -> void:
+    for floor in map_data:
+        var row_str := " ".join(floor.map(func(r) -> String:
+            return Room.Type.keys()[r.type][0]
+        ))
+        var connections : Array[String] = []
+        for i in floor.size() * 2 - 1:
+            connections.append(" ")
+        for room in floor:
+            for next_room in room.next_rooms:
+                if next_room.column > room.column:
+                    connections[room.column * 2 + 1] = "\\"
+                elif next_room.column < room.column:
+                    connections[room.column * 2 - 1] = "/"
+                else:
+                    connections[room.column * 2] = "|"
+        print(row_str)
+        print("".join(connections))
 
 func _generate_initial_grid() -> Array[Array]:
     var result: Array[Array] = []
